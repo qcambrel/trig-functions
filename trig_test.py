@@ -13,12 +13,15 @@ class TrigTest(unittest.TestCase):
 
 	def test_tan(self):
 		theta = trig.radians(60)
-		mytans = trig.tan1(theta), trig.tan2(theta)
+		mytans = trig.tan(theta), trig.precise_tan(theta)
 		pytan = math.tan(theta)
 		self.assertTrue(True in [pytan == mytan for mytan in mytans])
 
 	def test_sec(self):
-		pass
+		theta = trig.radians(60)
+		mysecs = trig.precise_sec(theta), trig.precise_sec(theta)
+		pysec = 1/math.cos(theta)
+		self.assertTrue(True in [pysec == mysec for mysec in mysecs])
 
 	def test_arcsin(self):
 		pass
